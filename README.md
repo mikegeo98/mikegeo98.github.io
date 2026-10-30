@@ -11,9 +11,12 @@ Personal academic page. Plain HTML/CSS/JS, no build step.
 - `img/portrait.jpg` – your photo (square, ~600px). The page shows initials until it exists.
 - `cv.pdf` – linked from the header.
 
-## Before publishing
+## Updating
 
-Search `index.html` for `TODO` comments. Remaining ones: portrait, CV, Beyond-research text, two paper PDFs.
+- News: keep to the latest 4-5 items.
+- New paper: add an entry under the right year in Publications (with a `dir` tag), and link it from the matching direction in Research.
+- New thesis: add a row under Ongoing in Students; move it to Completed with the year when done.
+- CV: replace `cv.pdf`.
 
 ## Deploy
 
