@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Michalis Georgoulakis</title>
-  <meta name="description" content="Michalis Georgoulakis Misegiannis, PhD student at TU Munich working on cloud-based analytics: resource management, caching, and GPU memory for data systems.">
+  <meta name="description" content="Michalis Georgoulakis Misegiannis, PhD student at TU Munich working on cloud analytics architectures, caching, modern hardware, serverless query processing and benchmarking.">
   <meta property="og:title" content="Michalis Georgoulakis">
   <meta property="og:description" content="PhD student at TU Munich. Cloud analytics, autoscaling, caching, GPU memory.">
   <meta property="og:type" content="website">
@@ -83,13 +83,12 @@
       Lately I have also been looking below the database layer: how GPUs behave when their memory is
       oversubscribed, and what memory-centric hardware means for how we should architect data systems.
     </p>
-    <ul class="chips" aria-label="Research interests">
-      <li>Cloud-based analytics</li>
-      <li>Autoscaling &amp; serverless</li>
-      <li>Caching architectures</li>
-      <li>Scheduling &amp; workload management</li>
-      <li>Query optimization</li>
-      <li>GPU memory</li>
+    <ul class="chips" aria-label="Research directions">
+      <li><a href="#dir-cloud">Cloud analytics architectures</a></li>
+      <li><a href="#dir-caching">Metadata management &amp; caching</a></li>
+      <li><a href="#dir-hardware">Modern hardware &amp; efficient computing</a></li>
+      <li><a href="#dir-serverless">Serverless query processing</a></li>
+      <li><a href="#dir-bench">Benchmarking</a></li>
     </ul>
   </section>
 
@@ -101,133 +100,158 @@
       <li><span class="news-date">Oct 2026</span><span class="news-text">Co-teaching the seminar <em>Next-Generation Data Systems</em> this winter.</span></li>
       <li><span class="news-date">Sep 2026</span><span class="news-text">Presented <em>CloudGlide</em> at VLDB 2026 in London.</span></li>
       <li><span class="news-date">Jun 2026</span><span class="news-text">Two papers at SIGMOD 2026: the CloudGlide demo and our cloud benchmarking paper at DBTest.</span></li>
-      <li><span class="news-date">2026</span><span class="news-text">New preprint on making Unified Virtual Memory practical for oversubscribed GPUs.</span></li>
+      <li><span class="news-date">2026</span><span class="news-text"><em>Ember</em>, our preprint on making Unified Virtual Memory practical for oversubscribed GPUs, is on arXiv.</span></li>
     </ul>
   </section>
 
   <!-- ============ RESEARCH ============ -->
   <section class="block" id="research">
     <h2>Research</h2>
-    <p class="block-intro">Three threads, one question: what does an analytical system actually pay for in the cloud, and how do we pay less?</p>
+    <p class="block-intro">Five directions, one question underneath: what does an analytical system actually pay for in the cloud, and how do we pay less?</p>
 
-    <div class="projects">
+    <div class="directions">
 
-      <article class="project">
-        <div class="project-head">
-          <h3>CloudGlide</h3>
-          <span class="tag">PVLDB 2025 · SIGMOD 2026 demo</span>
-        </div>
-        <p class="project-problem">Cloud analytics architectures (warehouse-as-a-service, query-as-a-service, serverless) are compared by anecdote because nobody can afford to deploy all of them.</p>
-        <p class="project-desc">CloudGlide is a white-box simulation framework that pairs a queueing-theoretic model with a discrete-event simulator, so you can explore provisioning, scaling and caching decisions across architectures before spending a cent. The demo adds an interactive UI on top.</p>
-        <div class="links">
-          <a href="https://www.vldb.org/pvldb/vol18/p5638-misegiannis.pdf" target="_blank" rel="noopener">Paper</a>
-          <a href="https://db.in.tum.de/~georgoulakis/papers/cloudglide_sigmod_demo.pdf" target="_blank" rel="noopener">Demo paper</a>
-          <a href="https://github.com/mikegeo98/cloudglide_olap" target="_blank" rel="noopener">Code</a>
-        </div>
+      <article class="direction" id="dir-cloud">
+        <h3>Cloud analytics architectures</h3>
+        <p class="direction-q">How should an analytical system be deployed in the cloud? Static or elastic provisioning, warehouse or query-as-a-service, one region or many. I build simulators and models that make these trade-offs explicit instead of anecdotal.</p>
+        <dl class="direction-rows">
+          <dt>Papers</dt>
+          <dd>
+            <a href="https://www.vldb.org/pvldb/vol18/p5638-misegiannis.pdf" target="_blank" rel="noopener">CloudGlide</a> <span class="v">PVLDB '25</span> ·
+            <a href="https://db.in.tum.de/~georgoulakis/papers/cloudglide_sigmod_demo.pdf" target="_blank" rel="noopener">CloudGlide demo</a> <span class="v">SIGMOD '26</span> ·
+            <a href="#pub-autoscaling">Autoscaling for cloud OLAP</a> <span class="v">SESAME '24</span> ·
+            <a href="#pub-eurosysdw">Resource optimization in the cloud</a> <span class="v">EuroSys DW '23</span>
+          </dd>
+          <dt>Code</dt>
+          <dd><a href="https://github.com/mikegeo98/cloudglide_olap" target="_blank" rel="noopener">CloudGlide simulator</a></dd>
+          <dt>Students</dt>
+          <dd>Geo-distributed OLTP design space (B. Fazakas, MT, ongoing) · Autoscaling with heterogeneous nodes (M. Fesl, MT) · Noisy neighbors in the cloud (C. Lykourinou, GR) · Interactive CloudGlide visualizer (L. Weingand, BT)</dd>
+        </dl>
       </article>
 
-      <article class="project">
-        <div class="project-head">
-          <h3>GPU memory under oversubscription</h3>
-          <span class="tag">Preprint 2026</span>
-        </div>
-        <p class="project-problem">Unified Virtual Memory lets GPU workloads exceed device memory, but once they do, performance collapses by orders of magnitude.</p>
-        <p class="project-desc">We characterise where the time goes when a discrete GPU oversubscribes its memory and show how to make UVM usable in that regime, both in software and with hardware support for prefetching. Joint work with Dimitrios Stavrakakis and students from the group.</p>
-        <div class="links">
-          <!-- TODO: point at the arXiv abstract page once public -->
-          <a href="https://db.in.tum.de/~georgoulakis/" target="_blank" rel="noopener">Paper</a>
-        </div>
+      <article class="direction" id="dir-caching">
+        <h3>Metadata management &amp; caching</h3>
+        <p class="direction-q">Disaggregated OLAP turns every cache into a distributed decision: what to keep, where to keep it, and whether sharing a cache across queries or tenants ever pays for itself.</p>
+        <dl class="direction-rows">
+          <dt>Papers</dt>
+          <dd><span class="muted">In progress.</span></dd>
+          <dt>Students</dt>
+          <dd>Shared caching for cloud OLAP: when is it worth it? (A. Lomov, BT, ongoing) · A unified in-memory caching layer for cloud OLAP (G. Caf, MT)</dd>
+        </dl>
       </article>
 
-      <article class="project">
-        <div class="project-head">
-          <h3>Benchmarking cloud analytics</h3>
-          <span class="tag">DBTest @ SIGMOD 2026</span>
-        </div>
-        <p class="project-problem">TPC-H says little about the workloads cloud warehouses actually run, and the vendor telemetry that does is stripped of the SQL.</p>
-        <p class="project-desc">We take stock of what public cloud traces can and cannot tell us, argue that reconstructing queries from telemetry is a dead end, and propose building benchmarks from concrete use cases such as ELT pipelines and BI dashboards instead. With Till Steinert, Viktor Leis and Muhammad El-Hindi.</p>
-        <div class="links">
-          <!-- TODO: link the DBTest PDF -->
-          <a href="https://db.in.tum.de/~georgoulakis/" target="_blank" rel="noopener">Paper</a>
-          <a href="https://github.com/mikegeo98/cab" target="_blank" rel="noopener">CAB fork</a>
-        </div>
+      <article class="direction" id="dir-hardware">
+        <h3>Modern hardware &amp; efficient computing</h3>
+        <p class="direction-q">Below the database layer: how data systems should use GPUs, unified memory and memory-centric hardware, and what breaks when GPU memory is oversubscribed. Ember is our answer for the last one: keep data in host memory by default and promote only what the hardware counters show is hot.</p>
+        <dl class="direction-rows">
+          <dt>Papers</dt>
+          <dd>
+            <a href="https://arxiv.org/abs/2610.13408" target="_blank" rel="noopener">Ember: practical UVM for oversubscribed GPUs</a> <span class="v">arXiv '26</span> ·
+            <a href="#pub-dbspektrum">Database architectures for memory-centric computing</a> <span class="v">Datenbank-Spektrum</span>
+          </dd>
+          <dt>Students</dt>
+          <dd>Hardware prefetcher for GPU UVM under oversubscription (S. Lemes, MT, ongoing) · Stabilizing discrete-GPU UVM under oversubscription (S. Lemes, GR) · Kernel-based hypervisor for lightweight VMs (T. Wachter, BT)</dd>
+        </dl>
+      </article>
+
+      <article class="direction" id="dir-serverless">
+        <h3>Serverless query processing</h3>
+        <p class="direction-q">Serverless engines bill per query, which turns query optimization into an explicit cost-performance trade-off. This thread started with multi-objective optimization in Spark SQL and continues with serverless query engines.</p>
+        <dl class="direction-rows">
+          <dt>Papers</dt>
+          <dd>
+            <a href="#pub-edbt">From cloud to serverless</a> <span class="v">EDBT '22 tutorial</span> ·
+            <a href="#pub-ideas">Multi-objective query optimization in Spark SQL</a> <span class="v">IDEAS '22</span>
+          </dd>
+          <dt>Students</dt>
+          <dd>Cost-performance optimization in serverless query engines (B. Fazakas, GR)</dd>
+        </dl>
+      </article>
+
+      <article class="direction" id="dir-bench">
+        <h3>Benchmarking</h3>
+        <p class="direction-q">Are we measuring the right thing? TPC-H says little about the workloads cloud warehouses actually run, and the vendor telemetry that does is stripped of the SQL. We argue for benchmarks built from concrete use cases such as ELT pipelines and BI dashboards.</p>
+        <dl class="direction-rows">
+          <dt>Papers</dt>
+          <dd><a href="#pub-dbtest">Cloud analytics benchmarking: where we are, what is missing</a> <span class="v">DBTest '26</span></dd>
+          <dt>Code</dt>
+          <dd><a href="https://github.com/mikegeo98/cab" target="_blank" rel="noopener">Cloud Analytics Benchmark (serverless fork)</a></dd>
+        </dl>
       </article>
 
     </div>
   </section>
-
   <!-- ============ PUBLICATIONS ============ -->
   <section class="block" id="publications">
     <h2>Publications</h2>
-    <!-- Convention: my name in bold; a trailing dagger marks equal contribution. -->
+    <!-- Convention: my name in bold; a trailing dagger marks equal contribution; the small tag names the research direction. -->
 
     <h3 class="year">2026</h3>
     <ul class="pubs">
-      <li class="pub">
+      <li class="pub" id="pub-ember">
         <p class="pub-title">Making Unified Virtual Memory Practical for Oversubscribed GPUs</p>
-        <p class="pub-authors"><b>Michalis Georgoulakis Misegiannis</b><sup>†</sup>, Senad-Leandro Lemes Galera<sup>†</sup>, Ferdinand Gruber, Jana Giceva, Dimitrios Stavrakakis</p>
-        <p class="pub-meta"><span class="venue venue-muted">arXiv preprint</span></p>
+        <p class="pub-authors">Senad-Leandro Lemes Galera<sup>†</sup>, <b>Michalis Georgoulakis Misegiannis</b><sup>†</sup>, Ferdinand Gruber, Jana Giceva, Dimitrios Stavrakakis</p>
+        <p class="pub-meta"><span class="venue venue-muted">arXiv preprint 2610.13408</span> <a href="https://arxiv.org/abs/2610.13408" target="_blank" rel="noopener">arXiv</a> <span class="dir">hardware</span></p>
       </li>
-      <li class="pub">
+      <li class="pub" id="pub-dbspektrum">
         <p class="pub-title">Rethinking Database Architectures for Memory-Centric Computing</p>
         <p class="pub-authors"><b>Michalis Georgoulakis Misegiannis</b>, Abdelrahman Adel, Mateusz Gienieczko, Jana Giceva</p>
-        <p class="pub-meta"><span class="venue">Datenbank-Spektrum</span></p>
+        <p class="pub-meta"><span class="venue">Datenbank-Spektrum</span> <span class="dir">hardware</span></p>
       </li>
-      <li class="pub">
+      <li class="pub" id="pub-dbtest">
         <p class="pub-title">Cloud Analytics Benchmarking: Where We Are, What Is Missing, and Where We Should Go</p>
         <p class="pub-authors"><b>Michalis Georgoulakis Misegiannis</b>, Till Steinert, Viktor Leis, Muhammad El-Hindi</p>
-        <p class="pub-meta"><span class="venue">DBTest @ SIGMOD 2026</span></p>
+        <p class="pub-meta"><span class="venue">DBTest @ SIGMOD 2026</span> <span class="dir">benchmarking</span></p>
       </li>
-      <li class="pub">
+      <li class="pub" id="pub-cloudglide-demo">
         <p class="pub-title">Demonstrating CloudGlide: Interactive Exploration of Cloud Analytics Architectures</p>
         <p class="pub-authors"><b>Michalis Georgoulakis Misegiannis</b>, Daniel Ritter, Jana Giceva</p>
-        <p class="pub-meta"><span class="venue">SIGMOD 2026 (demo)</span> <a href="https://db.in.tum.de/~georgoulakis/papers/cloudglide_sigmod_demo.pdf" target="_blank" rel="noopener">PDF</a></p>
+        <p class="pub-meta"><span class="venue">SIGMOD 2026 (demo)</span> <a href="https://db.in.tum.de/~georgoulakis/papers/cloudglide_sigmod_demo.pdf" target="_blank" rel="noopener">PDF</a> <span class="dir">cloud</span></p>
       </li>
     </ul>
 
     <h3 class="year">2025</h3>
     <ul class="pubs">
-      <li class="pub">
+      <li class="pub" id="pub-cloudglide">
         <p class="pub-title">CloudGlide: Deconstructing the Landscape of Cloud-Based Analytics</p>
         <p class="pub-authors"><b>Michalis Georgoulakis Misegiannis</b>, Daniel Ritter, Viktor Leis, Jana Giceva</p>
-        <p class="pub-meta"><span class="venue">PVLDB 18(13), presented at VLDB 2026</span> <a href="https://www.vldb.org/pvldb/vol18/p5638-misegiannis.pdf" target="_blank" rel="noopener">PDF</a> <a href="https://github.com/mikegeo98/cloudglide_olap" target="_blank" rel="noopener">Code</a></p>
+        <p class="pub-meta"><span class="venue">PVLDB 18(13), presented at VLDB 2026</span> <a href="https://www.vldb.org/pvldb/vol18/p5638-misegiannis.pdf" target="_blank" rel="noopener">PDF</a> <a href="https://github.com/mikegeo98/cloudglide_olap" target="_blank" rel="noopener">Code</a> <span class="dir">cloud</span></p>
       </li>
     </ul>
 
     <h3 class="year">2024</h3>
     <ul class="pubs">
-      <li class="pub">
+      <li class="pub" id="pub-autoscaling">
         <p class="pub-title">A Deep Dive into Autoscaling for Cloud-Based OLAP</p>
         <p class="pub-authors"><b>Michalis Georgoulakis Misegiannis</b>, Jana Giceva</p>
-        <p class="pub-meta"><span class="venue">SESAME @ EuroSys 2024</span> <span class="pub-note">work in progress</span></p>
+        <p class="pub-meta"><span class="venue">SESAME @ EuroSys 2024</span> <span class="pub-note">work in progress</span> <span class="dir">cloud</span></p>
       </li>
     </ul>
 
     <h3 class="year">2023</h3>
     <ul class="pubs">
-      <li class="pub">
+      <li class="pub" id="pub-eurosysdw">
         <p class="pub-title">Towards Next-Generation Resource Optimization in the Cloud</p>
         <p class="pub-authors"><b>Michalis Georgoulakis Misegiannis</b></p>
-        <p class="pub-meta"><span class="venue">EuroSys Doctoral Workshop 2023</span></p>
+        <p class="pub-meta"><span class="venue">EuroSys Doctoral Workshop 2023</span> <span class="dir">cloud</span></p>
       </li>
     </ul>
 
     <h3 class="year">2022</h3>
     <ul class="pubs">
-      <li class="pub">
+      <li class="pub" id="pub-edbt">
         <p class="pub-title">From Cloud to Serverless: Multi-Objective Optimization in the New Cloud Epoch</p>
         <p class="pub-authors"><b>Michalis Georgoulakis Misegiannis</b>, Laurent d'Orazio, Verena Kantere</p>
-        <p class="pub-meta"><span class="venue">EDBT 2022</span> <span class="pub-note">tutorial</span></p>
+        <p class="pub-meta"><span class="venue">EDBT 2022</span> <span class="pub-note">tutorial</span> <span class="dir">serverless</span></p>
       </li>
-      <li class="pub">
+      <li class="pub" id="pub-ideas">
         <p class="pub-title">Multi-Objective Query Optimization in Spark SQL</p>
         <p class="pub-authors"><b>Michalis Georgoulakis Misegiannis</b>, Verena Kantere, Laurent d'Orazio</p>
-        <p class="pub-meta"><span class="venue">IDEAS 2022</span> <a href="https://github.com/mikegeo98/Spark-SQL-Cost-Model" target="_blank" rel="noopener">Code</a></p>
+        <p class="pub-meta"><span class="venue">IDEAS 2022</span> <a href="https://github.com/mikegeo98/Spark-SQL-Cost-Model" target="_blank" rel="noopener">Code</a> <span class="dir">serverless</span></p>
       </li>
     </ul>
     <p class="footnote"><sup>†</sup> equal contribution</p>
   </section>
-
   <!-- ============ TEACHING ============ -->
   <section class="block" id="teaching">
     <h2>Teaching</h2>
@@ -252,8 +276,8 @@
     <aside class="callout">
       <h3>Looking for a thesis or guided research?</h3>
       <p>
-        I supervise Bachelor's and Master's theses and Guided Research on anything close to the topics above:
-        cloud analytics, caching, autoscaling, GPU memory. Self-proposed ideas are welcome if they connect to my research.
+        I supervise Bachelor's and Master's theses and Guided Research in any of the five directions above.
+        Self-proposed ideas are welcome if they connect to my research.
         Send me a short email with your CV and transcript and a sentence on what you want to work on.
       </p>
       <a class="btn" href="mailto:michalis.georgoulakis@tum.de?subject=Thesis%20/%20Guided%20Research">Email me</a>
@@ -261,26 +285,25 @@
 
     <h3 class="sub">Ongoing</h3>
     <ul class="rows rows-compact">
-      <li><span class="row-date">MT</span><span class="row-title">World Wide Wait: Exploring the Design Space of Geo-Distributed OLTP Database Systems</span><span class="row-sub">Senad Lemes</span></li>
-      <li><span class="row-date">MT</span><span class="row-title">A Hardware-Based Prefetcher for Stabilizing GPU Unified Memory Performance under Oversubscription</span><span class="row-sub">Borbala Fazakas</span></li>
-      <li><span class="row-date">BT</span><span class="row-title">Shared Caching for Cloud OLAP Systems: When Is It Worth It?</span><span class="row-sub">Artem Lomov</span></li>
+      <li><span class="row-date">MT</span><span class="row-title">World Wide Wait: Exploring the Design Space of Geo-Distributed OLTP Database Systems</span><span class="row-sub">Borbala Fazakas <span class="dir">cloud</span></span></li>
+      <li><span class="row-date">MT</span><span class="row-title">A Hardware-Based Prefetcher for Stabilizing GPU Unified Memory Performance under Oversubscription</span><span class="row-sub">Senad-Leandro Lemes Galera <span class="dir">hardware</span></span></li>
+      <li><span class="row-date">BT</span><span class="row-title">Shared Caching for Cloud OLAP Systems: When Is It Worth It?</span><span class="row-sub">Artem Lomov <span class="dir">caching</span></span></li>
     </ul>
 
     <h3 class="sub">Completed</h3>
     <ul class="rows rows-compact">
-      <li><span class="row-date">GR</span><span class="row-title">Stabilizing Discrete GPU Unified Memory Performance under Oversubscription</span><span class="row-sub">Senad Lemes</span></li>
-      <li><span class="row-date">MT</span><span class="row-title">Designing a Unified In-Memory Caching Layer for Cloud OLAP Workloads</span><span class="row-sub">Gregor Caf</span></li>
-      <li><span class="row-date">MT</span><span class="row-title">Workload-Driven Optimization of Autoscaling Systems Using Heterogeneous Nodes</span><span class="row-sub">Matthias Fesl</span></li>
-      <li><span class="row-date">MT</span><span class="row-title">Syslog Collection and Analysis of Network Devices in Microsoft Azure</span><span class="row-sub">Camelia Zalum</span></li>
-      <li><span class="row-date">GR</span><span class="row-title">Cost-Performance Optimization in Serverless Query Engines</span><span class="row-sub">Borbala Fazakas</span></li>
-      <li><span class="row-date">GR</span><span class="row-title">Quantifying the Noisy Neighbor Problem in the Cloud</span><span class="row-sub">Christodoulos Lykourinou</span></li>
-      <li><span class="row-date">BT</span><span class="row-title">Designing an Interactive Visualization Tool for Cloud-Based Analytics Simulations</span><span class="row-sub">Lukas Weingand</span></li>
-      <li><span class="row-date">BT</span><span class="row-title">A GUIde for Tuning and Troubleshooting Parallel Query Processing</span><span class="row-sub">Vincent Limbach</span></li>
-      <li><span class="row-date">BT</span><span class="row-title">Kernel-Based Hypervisor for Lightweight VMs</span><span class="row-sub">Thomas Wachter</span></li>
+      <li><span class="row-date">GR 2026</span><span class="row-title">Cost-Performance Optimization in Serverless Query Engines</span><span class="row-sub">Borbala Fazakas <span class="dir">serverless</span></span></li>
+      <li><span class="row-date">GR 2026</span><span class="row-title">Stabilizing Discrete GPU Unified Memory Performance under Oversubscription</span><span class="row-sub">Senad-Leandro Lemes Galera <span class="dir">hardware</span></span></li>
+      <li><span class="row-date">BT 2026</span><span class="row-title">Designing an Interactive Visualization Tool for Cloud-Based Analytics Simulations</span><span class="row-sub">Lukas Weingand <span class="dir">cloud</span></span></li>
+      <li><span class="row-date">BT 2026</span><span class="row-title">Kernel-Based Hypervisor for Lightweight VMs</span><span class="row-sub">Thomas Wachter <span class="dir">hardware</span></span></li>
+      <li><span class="row-date">MT 2025</span><span class="row-title">Designing a Unified In-Memory Caching Layer for Cloud OLAP Workloads</span><span class="row-sub">Gregor Caf <span class="dir">caching</span></span></li>
+      <li><span class="row-date">MT 2024</span><span class="row-title">Workload-Driven Optimization of Autoscaling Systems Using Heterogeneous Nodes</span><span class="row-sub">Matthias Fesl <span class="dir">cloud</span></span></li>
+      <li><span class="row-date">MT 2024</span><span class="row-title">Syslog Collection and Analysis of Network Devices in Microsoft Azure</span><span class="row-sub">Camelia Zalum</span></li>
+      <li><span class="row-date">GR 2023</span><span class="row-title">Quantifying the Noisy Neighbor Problem in the Cloud</span><span class="row-sub">Christodoulos Lykourinou <span class="dir">cloud</span></span></li>
+      <li><span class="row-date">BT 2023</span><span class="row-title">A GUIde for Tuning and Troubleshooting Parallel Query Processing</span><span class="row-sub">Vincent Limbach</span></li>
     </ul>
     <p class="footnote">BT: Bachelor's thesis · MT: Master's thesis · GR: Guided Research</p>
   </section>
-
   <!-- ============ BEYOND ============ -->
   <section class="block" id="beyond">
     <h2>Beyond research</h2>
