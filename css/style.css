@@ -88,12 +88,9 @@ sup { font-size: 0.7em; }
   height: var(--nav-h);
   display: flex; align-items: center; gap: 20px;
 }
-.nav-home {
-  font-family: var(--font-mono); font-weight: 500; font-size: 14px;
-  color: var(--text); background: var(--accent-soft);
-  padding: 3px 8px; border-radius: 6px;
-}
-.nav-home:hover { text-decoration: none; color: var(--accent-strong); }
+.nav-home { display: inline-flex; border-radius: 50%; overflow: hidden; line-height: 0; }
+.nav-home img { width: 28px; height: 28px; object-fit: cover; border-radius: 50%; border: 1px solid var(--border); }
+.nav-home:hover img { border-color: var(--accent); }
 .nav-links { list-style: none; margin: 0; padding: 0; display: flex; gap: 18px; flex: 1; }
 .nav-links a { color: var(--text-muted); font-size: 14px; font-weight: 500; }
 .nav-links a:hover { color: var(--text); text-decoration: none; }
