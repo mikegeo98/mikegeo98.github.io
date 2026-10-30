@@ -299,3 +299,7 @@ sup { font-size: 0.7em; }
   .direction { padding-left: 32px; }
 }
 .direction-papers .pp { display: inline-block; }
+.row-title a { color: var(--text); }
+.row-title a:hover { color: var(--accent); }
+.row-sub a { color: var(--text-muted); }
+.row-sub a:hover { color: var(--accent); }
