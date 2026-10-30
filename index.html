@@ -43,30 +43,33 @@
   </div>
 </nav>
 
-<main class="page" id="top">
-
-  <!-- ============ HEADER ============ -->
-  <header class="hero">
-    <div class="hero-text">
-      <p class="hero-kicker">PhD student · Chair for Database Systems · TU Munich</p>
-      <h1 class="hero-name">Michalis Georgoulakis <span class="hero-surname2">Misegiannis</span></h1>
-      <p class="hero-lede">
-        I study how analytical database systems should use cloud resources:
-        when to scale, what to cache, and where the data should live.
-      </p>
-      <ul class="hero-links">
+<div class="page" id="top">
+  <aside class="side">
+    <!-- TODO: replace img/portrait.jpg with a real photo (square, ~600px). The fallback shows initials until then. -->
+    <div class="side-photo" aria-hidden="true">
+      <img src="img/portrait.jpg" alt="" onerror="this.remove()">
+      <span class="side-initials">MG</span>
+    </div>
+    <p class="side-name">Michalis Georgoulakis <span class="side-surname2">Misegiannis</span></p>
+    <p class="side-role">PhD student</p>
+    <p class="side-affil"><a href="https://db.in.tum.de/" target="_blank" rel="noopener">Chair for Database Systems</a><br>TU Munich</p>
+      <ul class="side-links">
         <li><a href="mailto:michalis.georgoulakis@tum.de"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>michalis.georgoulakis@tum.de</a></li>
         <li><a href="https://github.com/mikegeo98" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>GitHub</a></li>
         <li><a href="https://db.in.tum.de/~georgoulakis/" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>TUM page</a></li>
         <li><a href="https://scholar.google.com/scholar?q=Georgoulakis+Misegiannis" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>Scholar</a></li>
         <li><a href="cv.pdf"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h8"/></svg>CV</a></li>
       </ul>
-    </div>
-    <!-- TODO: replace img/portrait.jpg with a real photo (square, ~600px). The fallback shows initials until then. -->
-    <div class="hero-photo" aria-hidden="true">
-      <img src="img/portrait.jpg" alt="" onerror="this.remove()">
-      <span class="hero-initials">MG</span>
-    </div>
+  </aside>
+
+  <main class="content">
+
+  <!-- ============ INTRO ============ -->
+  <header class="hero">
+    <p class="hero-lede">
+      I study how analytical database systems should use cloud resources:
+      when to scale, what to cache, and where the data should live.
+    </p>
   </header>
 
   <!-- ============ ABOUT ============ -->
@@ -296,7 +299,8 @@
     <p class="placeholder">Two or three sentences about you outside the office go here.</p>
   </section>
 
-</main>
+  </main>
+</div>
 
 <footer class="site-footer">
   <div class="footer-inner">
