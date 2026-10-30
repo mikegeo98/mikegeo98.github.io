@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Michalis Georgoulakis</title>
+  <meta name="description" content="Michalis Georgoulakis Misegiannis, PhD student at TU Munich working on cloud-based analytics: resource management, caching, and GPU memory for data systems.">
+  <meta property="og:title" content="Michalis Georgoulakis">
+  <meta property="og:description" content="PhD student at TU Munich. Cloud analytics, autoscaling, caching, GPU memory.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b6e8a'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='30' font-weight='700' fill='white' text-anchor='middle'%3EMG%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // Apply the saved theme before first paint to avoid a flash.
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+</head>
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <div class="nav-inner">
+    <a class="nav-home" href="#top">MG</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#students">Students</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="page" id="top">
+
+  <!-- ============ HEADER ============ -->
+  <header class="hero">
+    <div class="hero-text">
+      <p class="hero-kicker">PhD student · Chair for Database Systems · TU Munich</p>
+      <h1 class="hero-name">Michalis Georgoulakis <span class="hero-surname2">Misegiannis</span></h1>
+      <p class="hero-lede">
+        I study how analytical database systems should use cloud resources:
+        when to scale, what to cache, and where the data should live.
+      </p>
+      <ul class="hero-links">
+        <li><a href="mailto:michalis.georgoulakis@tum.de"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>michalis.georgoulakis@tum.de</a></li>
+        <li><a href="https://github.com/mikegeo98" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>GitHub</a></li>
+        <li><a href="https://db.in.tum.de/~georgoulakis/" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>TUM page</a></li>
+        <li><a href="https://scholar.google.com/scholar?q=Georgoulakis+Misegiannis" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>Scholar</a></li>
+        <li><a href="cv.pdf"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h8"/></svg>CV</a></li>
+      </ul>
+    </div>
+    <!-- TODO: replace img/portrait.jpg with a real photo (square, ~600px). The fallback shows initials until then. -->
+    <div class="hero-photo" aria-hidden="true">
+      <img src="img/portrait.jpg" alt="" onerror="this.remove()">
+      <span class="hero-initials">MG</span>
+    </div>
+  </header>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="block" id="about">
+    <h2>About</h2>
+    <p>
+      I am a PhD student in the <a href="https://db.in.tum.de/" target="_blank" rel="noopener">Database Systems group</a> at
+      TU Munich, advised by <a href="https://db.in.tum.de/~giceva/" target="_blank" rel="noopener">Prof. Jana Giceva</a>.
+      My research sits between database systems and cloud infrastructure. Cloud warehouses promise elasticity,
+      but every design choice (how to provision, how to cache, when to scale) comes with a cost that is hard to
+      reason about. I build models, simulators and benchmarks that make those trade-offs explicit, and then use
+      them to argue for better system designs.
+    </p>
+    <p>
+      Lately I have also been looking below the database layer: how GPUs behave when their memory is
+      oversubscribed, and what memory-centric hardware means for how we should architect data systems.
+    </p>
+    <ul class="chips" aria-label="Research interests">
+      <li>Cloud-based analytics</li>
+      <li>Autoscaling &amp; serverless</li>
+      <li>Caching architectures</li>
+      <li>Scheduling &amp; workload management</li>
+      <li>Query optimization</li>
+      <li>GPU memory</li>
+    </ul>
+  </section>
+
+  <!-- ============ NEWS ============ -->
+  <section class="block" id="news">
+    <h2>News</h2>
+    <ul class="news">
+      <!-- TODO: keep this to the latest 4-5 items; drop old ones rather than letting it grow. -->
+      <li><span class="news-date">Oct 2026</span><span class="news-text">Co-teaching the seminar <em>Next-Generation Data Systems</em> this winter.</span></li>
+      <li><span class="news-date">Sep 2026</span><span class="news-text">Presented <em>CloudGlide</em> at VLDB 2026 in London.</span></li>
+      <li><span class="news-date">Jun 2026</span><span class="news-text">Two papers at SIGMOD 2026: the CloudGlide demo and our cloud benchmarking paper at DBTest.</span></li>
+      <li><span class="news-date">2026</span><span class="news-text">New preprint on making Unified Virtual Memory practical for oversubscribed GPUs.</span></li>
+    </ul>
+  </section>
+
+  <!-- ============ RESEARCH ============ -->
+  <section class="block" id="research">
+    <h2>Research</h2>
+    <p class="block-intro">Three threads, one question: what does an analytical system actually pay for in the cloud, and how do we pay less?</p>
+
+    <div class="projects">
+
+      <article class="project">
+        <div class="project-head">
+          <h3>CloudGlide</h3>
+          <span class="tag">PVLDB 2025 · SIGMOD 2026 demo</span>
+        </div>
+        <p class="project-problem">Cloud analytics architectures (warehouse-as-a-service, query-as-a-service, serverless) are compared by anecdote because nobody can afford to deploy all of them.</p>
+        <p class="project-desc">CloudGlide is a white-box simulation framework that pairs a queueing-theoretic model with a discrete-event simulator, so you can explore provisioning, scaling and caching decisions across architectures before spending a cent. The demo adds an interactive UI on top.</p>
+        <div class="links">
+          <a href="https://www.vldb.org/pvldb/vol18/p5638-misegiannis.pdf" target="_blank" rel="noopener">Paper</a>
+          <a href="https://db.in.tum.de/~georgoulakis/papers/cloudglide_sigmod_demo.pdf" target="_blank" rel="noopener">Demo paper</a>
+          <a href="https://github.com/mikegeo98/cloudglide_olap" target="_blank" rel="noopener">Code</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
+          <h3>GPU memory under oversubscription</h3>
+          <span class="tag">Preprint 2026</span>
+        </div>
+        <p class="project-problem">Unified Virtual Memory lets GPU workloads exceed device memory, but once they do, performance collapses by orders of magnitude.</p>
+        <p class="project-desc">We characterise where the time goes when a discrete GPU oversubscribes its memory and show how to make UVM usable in that regime, both in software and with hardware support for prefetching. Joint work with Dimitrios Stavrakakis and students from the group.</p>
+        <div class="links">
+          <!-- TODO: point at the arXiv abstract page once public -->
+          <a href="https://db.in.tum.de/~georgoulakis/" target="_blank" rel="noopener">Paper</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
+          <h3>Benchmarking cloud analytics</h3>
+          <span class="tag">DBTest @ SIGMOD 2026</span>
+        </div>
+        <p class="project-problem">TPC-H says little about the workloads cloud warehouses actually run, and the vendor telemetry that does is stripped of the SQL.</p>
+        <p class="project-desc">We take stock of what public cloud traces can and cannot tell us, argue that reconstructing queries from telemetry is a dead end, and propose building benchmarks from concrete use cases such as ELT pipelines and BI dashboards instead. With Till Steinert, Viktor Leis and Muhammad El-Hindi.</p>
+        <div class="links">
+          <!-- TODO: link the DBTest PDF -->
+          <a href="https://db.in.tum.de/~georgoulakis/" target="_blank" rel="noopener">Paper</a>
+          <a href="https://github.com/mikegeo98/cab" target="_blank" rel="noopener">CAB fork</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ PUBLICATIONS ============ -->
+  <section class="block" id="publications">
+    <h2>Publications</h2>
+    <!-- Convention: my name in bold; a trailing dagger marks equal contribution. -->
+
+    <h3 class="year">2026</h3>
+    <ul class="pubs">
+      <li class="pub">
+        <p class="pub-title">Making Unified Virtual Memory Practical for Oversubscribed GPUs</p>
+        <p class="pub-authors"><b>Michalis Georgoulakis Misegiannis</b><sup>†</sup>, Senad-Leandro Lemes Galera<sup>†</sup>, Ferdinand Gruber, Jana Giceva, Dimitrios Stavrakakis</p>
+        <p class="pub-meta"><span class="venue venue-muted">arXiv preprint</span></p>
+      </li>
+      <li class="pub">
+        <p class="pub-title">Rethinking Database Architectures for Memory-Centric Computing</p>
+        <p class="pub-authors"><b>Michalis Georgoulakis Misegiannis</b>, Abdelrahman Adel, Mateusz Gienieczko, Jana Giceva</p>
+        <p class="pub-meta"><span class="venue">Datenbank-Spektrum</span></p>
+      </li>
+      <li class="pub">
+        <p class="pub-title">Cloud Analytics Benchmarking: Where We Are, What Is Missing, and Where We Should Go</p>
+        <p class="pub-authors"><b>Michalis Georgoulakis Misegiannis</b>, Till Steinert, Viktor Leis, Muhammad El-Hindi</p>
+        <p class="pub-meta"><span class="venue">DBTest @ SIGMOD 2026</span></p>
+      </li>
+      <li class="pub">
+        <p class="pub-title">Demonstrating CloudGlide: Interactive Exploration of Cloud Analytics Architectures</p>
+        <p class="pub-authors"><b>Michalis Georgoulakis Misegiannis</b>, Daniel Ritter, Jana Giceva</p>
+        <p class="pub-meta"><span class="venue">SIGMOD 2026 (demo)</span> <a href="https://db.in.tum.de/~georgoulakis/papers/cloudglide_sigmod_demo.pdf" target="_blank" rel="noopener">PDF</a></p>
+      </li>
+    </ul>
+
+    <h3 class="year">2025</h3>
+    <ul class="pubs">
+      <li class="pub">
+        <p class="pub-title">CloudGlide: Deconstructing the Landscape of Cloud-Based Analytics</p>
+        <p class="pub-authors"><b>Michalis Georgoulakis Misegiannis</b>, Daniel Ritter, Viktor Leis, Jana Giceva</p>
+        <p class="pub-meta"><span class="venue">PVLDB 18(13), presented at VLDB 2026</span> <a href="https://www.vldb.org/pvldb/vol18/p5638-misegiannis.pdf" target="_blank" rel="noopener">PDF</a> <a href="https://github.com/mikegeo98/cloudglide_olap" target="_blank" rel="noopener">Code</a></p>
+      </li>
+    </ul>
+
+    <h3 class="year">2024</h3>
+    <ul class="pubs">
+      <li class="pub">
+        <p class="pub-title">A Deep Dive into Autoscaling for Cloud-Based OLAP</p>
+        <p class="pub-authors"><b>Michalis Georgoulakis Misegiannis</b>, Jana Giceva</p>
+        <p class="pub-meta"><span class="venue">SESAME @ EuroSys 2024</span> <span class="pub-note">work in progress</span></p>
+      </li>
+    </ul>
+
+    <h3 class="year">2023</h3>
+    <ul class="pubs">
+      <li class="pub">
+        <p class="pub-title">Towards Next-Generation Resource Optimization in the Cloud</p>
+        <p class="pub-authors"><b>Michalis Georgoulakis Misegiannis</b></p>
+        <p class="pub-meta"><span class="venue">EuroSys Doctoral Workshop 2023</span></p>
+      </li>
+    </ul>
+
+    <h3 class="year">2022</h3>
+    <ul class="pubs">
+      <li class="pub">
+        <p class="pub-title">From Cloud to Serverless: Multi-Objective Optimization in the New Cloud Epoch</p>
+        <p class="pub-authors"><b>Michalis Georgoulakis Misegiannis</b>, Laurent d'Orazio, Verena Kantere</p>
+        <p class="pub-meta"><span class="venue">EDBT 2022</span> <span class="pub-note">tutorial</span></p>
+      </li>
+      <li class="pub">
+        <p class="pub-title">Multi-Objective Query Optimization in Spark SQL</p>
+        <p class="pub-authors"><b>Michalis Georgoulakis Misegiannis</b>, Verena Kantere, Laurent d'Orazio</p>
+        <p class="pub-meta"><span class="venue">IDEAS 2022</span> <a href="https://github.com/mikegeo98/Spark-SQL-Cost-Model" target="_blank" rel="noopener">Code</a></p>
+      </li>
+    </ul>
+    <p class="footnote"><sup>†</sup> equal contribution</p>
+  </section>
+
+  <!-- ============ TEACHING ============ -->
+  <section class="block" id="teaching">
+    <h2>Teaching</h2>
+    <p class="block-intro">Teaching assistant at TUM since 2022, mostly on the cloud and hardware side of the curriculum.</p>
+    <ul class="rows">
+      <li><span class="row-date">WS 26/27</span><span class="row-title">Seminar: Next-Generation Data Systems</span><span class="row-sub">co-organizer</span></li>
+      <li><span class="row-date">SS 2026</span><span class="row-title">Praktikum: Cloud-Based Data Processing</span></li>
+      <li><span class="row-date">WS 25/26</span><span class="row-title">Advanced Algorithms in Competitive Programming</span></li>
+      <li><span class="row-date">SS 2025</span><span class="row-title">Data Processing on Modern Hardware</span></li>
+      <li><span class="row-date">WS 24/25</span><span class="row-title">Cloud-Based Data Processing</span></li>
+      <li><span class="row-date">SS 2024</span><span class="row-title">Data Processing on Modern Hardware</span></li>
+      <li><span class="row-date">WS 23/24</span><span class="row-title">Cloud-Based Data Processing</span></li>
+      <li><span class="row-date">SS 2023</span><span class="row-title">Data Processing on Modern Hardware</span><span class="row-sub">also: Seminar Modern Database Systems</span></li>
+      <li><span class="row-date">WS 22/23</span><span class="row-title">Cloud-Based Data Processing</span></li>
+    </ul>
+  </section>
+
+  <!-- ============ STUDENTS ============ -->
+  <section class="block" id="students">
+    <h2>Students</h2>
+
+    <aside class="callout">
+      <h3>Looking for a thesis or guided research?</h3>
+      <p>
+        I supervise Bachelor's and Master's theses and Guided Research on anything close to the topics above:
+        cloud analytics, caching, autoscaling, GPU memory. Self-proposed ideas are welcome if they connect to my research.
+        Send me a short email with your CV and transcript and a sentence on what you want to work on.
+      </p>
+      <a class="btn" href="mailto:michalis.georgoulakis@tum.de?subject=Thesis%20/%20Guided%20Research">Email me</a>
+    </aside>
+
+    <h3 class="sub">Ongoing</h3>
+    <ul class="rows rows-compact">
+      <li><span class="row-date">MT</span><span class="row-title">World Wide Wait: Exploring the Design Space of Geo-Distributed OLTP Database Systems</span><span class="row-sub">Senad Lemes</span></li>
+      <li><span class="row-date">MT</span><span class="row-title">A Hardware-Based Prefetcher for Stabilizing GPU Unified Memory Performance under Oversubscription</span><span class="row-sub">Borbala Fazakas</span></li>
+      <li><span class="row-date">BT</span><span class="row-title">Shared Caching for Cloud OLAP Systems: When Is It Worth It?</span><span class="row-sub">Artem Lomov</span></li>
+    </ul>
+
+    <h3 class="sub">Completed</h3>
+    <ul class="rows rows-compact">
+      <li><span class="row-date">GR</span><span class="row-title">Stabilizing Discrete GPU Unified Memory Performance under Oversubscription</span><span class="row-sub">Senad Lemes</span></li>
+      <li><span class="row-date">MT</span><span class="row-title">Designing a Unified In-Memory Caching Layer for Cloud OLAP Workloads</span><span class="row-sub">Gregor Caf</span></li>
+      <li><span class="row-date">MT</span><span class="row-title">Workload-Driven Optimization of Autoscaling Systems Using Heterogeneous Nodes</span><span class="row-sub">Matthias Fesl</span></li>
+      <li><span class="row-date">MT</span><span class="row-title">Syslog Collection and Analysis of Network Devices in Microsoft Azure</span><span class="row-sub">Camelia Zalum</span></li>
+      <li><span class="row-date">GR</span><span class="row-title">Cost-Performance Optimization in Serverless Query Engines</span><span class="row-sub">Borbala Fazakas</span></li>
+      <li><span class="row-date">GR</span><span class="row-title">Quantifying the Noisy Neighbor Problem in the Cloud</span><span class="row-sub">Christodoulos Lykourinou</span></li>
+      <li><span class="row-date">BT</span><span class="row-title">Designing an Interactive Visualization Tool for Cloud-Based Analytics Simulations</span><span class="row-sub">Lukas Weingand</span></li>
+      <li><span class="row-date">BT</span><span class="row-title">A GUIde for Tuning and Troubleshooting Parallel Query Processing</span><span class="row-sub">Vincent Limbach</span></li>
+      <li><span class="row-date">BT</span><span class="row-title">Kernel-Based Hypervisor for Lightweight VMs</span><span class="row-sub">Thomas Wachter</span></li>
+    </ul>
+    <p class="footnote">BT: Bachelor's thesis · MT: Master's thesis · GR: Guided Research</p>
+  </section>
+
+  <!-- ============ BEYOND ============ -->
+  <section class="block" id="beyond">
+    <h2>Beyond research</h2>
+    <!-- TODO: two or three honest sentences. What you do when not working, where you're from, one thing people would not guess. Keep it short; this is the part Nicolò does well. -->
+    <p class="placeholder">Two or three sentences about you outside the office go here.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 Michalis Georgoulakis Misegiannis</span>
+    <span>Boltzmannstr. 3, 85748 Garching · Room 02.11.060</span>
+    <a href="https://github.com/mikegeo98/mikegeo98.github.io" target="_blank" rel="noopener">Source</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
