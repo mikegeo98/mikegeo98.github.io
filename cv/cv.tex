@@ -1,0 +1,217 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage{enumitem}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+\pdfgentounicode=1
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumePubItem}[4]{
+  \item \normalsize{
+    \textbf{#1}. #2. \textit{#3}, #4 \vspace{-2pt}
+  }
+}
+\begin{document}
+\begin{center}
+    \textbf{\Huge \scshape Michail Georgoulakis Misegiannis} \\ \vspace{1pt}
+    \small Munich, Germany
+
+    \href{mailto:geom@in.tum.de}{\underline{geom@in.tum.de}} $|$
+    \href{https://github.com/mikegeo98}{\underline{GitHub }}$|$
+    \href{https://gr.linkedin.com/in/michalis-georgoulakis-misegiannis-26355322b}{\underline{LinkedIn}} $|$
+    \href{https://scholar.google.com/citations?user=gez8X_8AAAAJ&hl=el&oi=ao}{\underline{Google Scholar}}
+\end{center}
+\section{Summary}
+Ph.D. student in Computer Science at the Technical University of Munich, advised by Prof. Jana Giceva. My research focuses on designing cost-efficient cloud-based systems, with particular emphasis on caching, scheduling, and serverless computing.
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Technical University of Munich, Munich, Germany}{Oct 2022 -- Present}
+{Ph.D. in Computer Science}{}
+\resumeItemListStart
+\resumeItem{Chair of Database Systems, Department of Informatics}
+\resumeItem{Supervisor: Prof. Jana Giceva}
+\resumeItemListEnd
+\resumeSubheading
+{National Technical University of Athens, Athens, Greece}{Sep 2016 -- Nov 2021}
+{Master in Engineering (M. Eng), Electrical and Computer Engineering}{}
+\resumeItemListStart
+\resumeItem{Orientation: Computer Science}
+\resumeItem{Grade: 8.14/10}
+\resumeItem{Thesis: \textit{Multi-objective Query Optimization for Massively Parallel Processing in Cloud Computing}}
+\resumeItem{Thesis Grade: 10/10}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Publications}
+\resumeItemListStart
+\resumePubItem
+{Making Unified Virtual Memory Practical for Oversubscribed GPUs}
+{Senad-Leandro Lemes Galera$^{*}$, Michail Georgoulakis Misegiannis$^{*}$, Ferdinand Gruber, Jana Giceva, Dimitrios Stavrakakis}
+{arXiv preprint 2610.13408}
+{2026 \ ($^{*}$equal contribution)}
+\resumePubItem
+{Rethinking Database Architectures for Memory-Centric Computing}
+{Michail Georgoulakis Misegiannis, Abdelrahman Adel, Mateusz Gienieczko, Jana Giceva}
+{Datenbank-Spektrum}
+{2026}
+\resumePubItem
+{Cloud Analytics Benchmarking: Where We Are, What Is Missing, and Where We Should Go}
+{Michail Georgoulakis Misegiannis, Till Steinert, Viktor Leis, Muhammad El-Hindi}
+{DBTest Workshop @ SIGMOD}
+{2026}
+\resumePubItem
+{CloudGlide: Deconstructing the Landscape of Cloud-Based Analytics}
+{Michail Georgoulakis Misegiannis, Daniel Ritter, Viktor Leis, Jana Giceva}
+{PVLDB}
+{18(13): 5638--5651,2025}
+\resumePubItem
+{Demonstrating CloudGlide: Interactive Exploration of Cloud Analytics Architectures}
+{Michail Georgoulakis Misegiannis, Daniel Ritter, Jana Giceva}
+{SIGMOD Demonstration Track}
+{2026}
+\resumePubItem
+{Towards Next-Generation Resource Optimization in the Cloud}
+{Michail Georgoulakis Misegiannis}
+{EuroSys Doctoral Workshop}
+{2023}
+\resumePubItem
+{Multi-objective Query Optimization in Spark SQL}
+{Michail Georgoulakis Misegiannis, Verena Kantere, Laurent d'Orazio}
+{IDEAS}
+{2022}
+\resumePubItem
+{From Cloud to Serverless: MOO in the New Cloud Epoch}
+{Michail Georgoulakis Misegiannis, Verena Kantere, Laurent d'Orazio}
+{EDBT Tutorial Track}
+{2022}
+\resumeItemListEnd
+\section{Professional Experience}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Firebolt Analytics}{Jul 2024 -- Oct 2024}
+{Software Developer}{}
+\resumeItemListStart
+\resumeItem{Worked on database system components and query execution infrastructure for cloud analytics workloads.}
+\resumeItem{Implemented and optimized scheduling mechanisms for distributed query processing.}
+\resumeItemListEnd
+\resumeSubheading
+{Qubit Systems, Athens, Greece}{Feb 2022 -- Jul 2022}
+{Software Engineer}{}
+\resumeItemListStart
+\resumeItem{Backend web development and analytics tasks.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Academic Service}
+\resumeItemListStart
+\resumeItem{\textbf{Shadow PC Member}, VLDB 2027}
+\resumeItemListEnd
+\section{Teaching Experience}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Teaching Assistant}{2022 -- Present}
+{Technical University of Munich}{}
+\resumeItemListStart
+\resumeItem{\textbf{Seminar: Next-Generation Data Systems} — Winter 2026/2027 (co-organizer)}
+\resumeItem{\textbf{Practical Course: Cloud-Based Data Processing} — Summer 2026 (lead organizer)}
+\resumeItem{\textbf{Advanced Algorithms in Competitive Programming} — Winter 2025/2026}
+\resumeItem{\textbf{Data Processing on Modern Hardware} — Summer 2023, 2024, 2025}
+\resumeItem{\textbf{Cloud-Based Data Processing} — Winter 2022/2023, 2023/2024, 2024/2025}
+\resumeItem{\textbf{Seminar – Modern Database Systems} — Summer 2023}
+\resumeItemListEnd
+\resumeSubheading
+{Lectures Delivered}{}
+{Technical University of Munich}{}
+\resumeItemListStart
+\resumeItem{\textbf{Cloud-Based Data Processing}: Data Centers (2023), Cloud-Based OLAP Systems (2025)}
+\resumeItem{\textbf{Foundations of Data Engineering}: Distributed Query Processing (2025)}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Student Supervision}
+\resumeItemListStart
+\resumeItem{\textbf{World Wide Wait: Exploring the Design Space of Geo-Distributed OLTP Database Systems} (Master Thesis, ongoing)}
+\resumeItem{\textbf{A Hardware-Based Prefetcher for Stabilizing GPU Unified Memory Performance under Oversubscription} (Master Thesis, ongoing)}
+\resumeItem{\textbf{Shared Caching for Cloud OLAP Systems: When Is It Worth It?} (Bachelor Thesis, ongoing)}
+\resumeItem{\textbf{Cost-Performance Optimization in Serverless Query Engines} (Guided Research, 2026)}
+\resumeItem{\textbf{Stabilizing Discrete GPU Unified Memory Performance under Oversubscription} (Guided Research, 2026)}
+\resumeItem{\textbf{Designing an Interactive Visualization Tool for Cloud-Based Analytics Simulations} (Bachelor Thesis, 2026)}
+\resumeItem{\textbf{Kernel-Based Hypervisor for Lightweight VMs} (Bachelor Thesis, 2026)}
+\resumeItem{\textbf{Designing a Unified In-Memory Caching Layer for Cloud OLAP Workloads} (Master Thesis, 2025)}
+\resumeItem{\textbf{Workload-Driven Optimization of Autoscaling Systems Using Heterogeneous Nodes} (Master Thesis, 2024)}
+\resumeItem{\textbf{Syslog Collection and Analysis of Network Devices in Microsoft Azure} (Master Thesis, 2024)}
+\resumeItem{\textbf{Quantifying the Noisy Neighbor Problem in the Cloud} (Guided Research, 2023)}
+\resumeItem{\textbf{A GUIde for Tuning and Troubleshooting Parallel Query Processing} (Bachelor Thesis, 2023)}
+\resumeItemListEnd
+\section{Language Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Greek}{: Native } \\
+     \textbf{English}{: Full professional proficiency (C2 Certificate and IELTS 8.0/9.0)} \\
+     \textbf{French}{: Professional working proficiency (C1 Certificate)} \\
+     \textbf{German}{: Professional working proficiency (B2)} \\
+    }}
+ \end{itemize}
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+\small{\item{
+\textbf{Programming Languages}: C/C++, Python, Java, Scala \\
+\textbf{Databases}: DuckDB, PostgreSQL, MySQL, ClickHouse \\
+\textbf{Data Processing Frameworks}: Firebolt, Apache Spark, Hadoop, Hive \\
+\textbf{Cloud Platforms}: AWS, Microsoft Azure, Google Cloud \\
+\textbf{Systems \& Infrastructure}: Docker, Kubernetes, minio \\
+\textbf{Tools}: Git, LaTeX
+}}
+\end{itemize}
+\end{document}
