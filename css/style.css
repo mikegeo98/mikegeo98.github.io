@@ -300,3 +300,14 @@ sup { font-size: 0.7em; }
 .row-title a:hover { color: var(--accent); }
 .row-sub a { color: var(--text-muted); }
 .row-sub a:hover { color: var(--accent); }
+
+/* collapsible completed theses */
+.fold summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; }
+.fold summary::-webkit-details-marker { display: none; }
+.fold summary::before {
+  content: ''; width: 6px; height: 6px; border-right: 1.5px solid var(--text-faint); border-bottom: 1.5px solid var(--text-faint);
+  transform: rotate(-45deg); transition: transform 0.15s; margin-left: 2px;
+}
+.fold[open] summary::before { transform: rotate(45deg); }
+.fold-count { font-family: var(--font-mono); font-size: 12px; font-weight: 400; color: var(--text-faint); }
+.fold summary:hover { color: var(--accent); }
