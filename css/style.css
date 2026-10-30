@@ -247,20 +247,23 @@ sup { font-size: 0.7em; }
 }
 
 /* ---------- research directions ---------- */
-.directions { display: grid; gap: 14px; }
+.directions { list-style: none; margin: 0; padding: 0; counter-reset: dir; }
 .direction {
-  background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 20px 22px; box-shadow: var(--shadow);
+  position: relative; padding: 18px 0 18px 44px; border-top: 1px solid var(--border);
+  counter-increment: dir;
 }
-.direction h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
-.direction-q { color: var(--text-muted); font-size: 15px; margin-bottom: 14px; }
-.direction-rows { margin: 0; display: grid; grid-template-columns: 72px 1fr; gap: 6px 14px; font-size: 14.5px; }
-.direction-rows dt {
-  font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em;
-  color: var(--text-faint); padding-top: 3px;
+.direction:last-child { border-bottom: 1px solid var(--border); }
+.direction::before {
+  content: counter(dir, decimal-leading-zero);
+  position: absolute; left: 0; top: 21px;
+  font-family: var(--font-mono); font-size: 13px; color: var(--accent);
 }
-.direction-rows dd { margin: 0; line-height: 1.55; }
-.direction-rows .v { font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); white-space: nowrap; }
+.direction h3 { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+.direction p { color: var(--text-muted); font-size: 15px; margin-bottom: 8px; }
+.direction-papers { display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: baseline; font-size: 14px; }
+.direction-papers a { color: var(--text); font-weight: 500; }
+.direction-papers a:hover { color: var(--accent); }
+.direction-papers .v { font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); margin-right: 10px; white-space: nowrap; }
 .muted { color: var(--text-faint); }
 
 /* direction tag on publications and theses */
@@ -277,8 +280,6 @@ sup { font-size: 0.7em; }
 .chips a:hover { background: var(--accent); color: #fff; border-radius: 999px; text-decoration: none; }
 
 @media (max-width: 640px) {
-  .direction { padding: 16px; }
-  .direction-rows { grid-template-columns: 1fr; gap: 2px; }
-  .direction-rows dt { padding-top: 8px; }
-  .direction-rows dt:first-child { padding-top: 0; }
+  .direction { padding-left: 32px; }
 }
+.direction-papers .pp { display: inline-block; }

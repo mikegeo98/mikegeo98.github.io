@@ -107,79 +107,53 @@
   <!-- ============ RESEARCH ============ -->
   <section class="block" id="research">
     <h2>Research</h2>
-    <p class="block-intro">Five directions, one question underneath: what does an analytical system actually pay for in the cloud, and how do we pay less?</p>
+    <p class="block-intro">One question underneath all of it: what does an analytical system actually pay for in the cloud, and how do we pay less?</p>
 
-    <div class="directions">
+    <ol class="directions">
 
-      <article class="direction" id="dir-cloud">
+      <li class="direction" id="dir-cloud">
         <h3>Cloud analytics architectures</h3>
-        <p class="direction-q">How should an analytical system be deployed in the cloud? Static or elastic provisioning, warehouse or query-as-a-service, one region or many. I build simulators and models that make these trade-offs explicit instead of anecdotal.</p>
-        <dl class="direction-rows">
-          <dt>Papers</dt>
-          <dd>
-            <a href="https://www.vldb.org/pvldb/vol18/p5638-misegiannis.pdf" target="_blank" rel="noopener">CloudGlide</a> <span class="v">PVLDB '25</span> ·
-            <a href="https://db.in.tum.de/~georgoulakis/papers/cloudglide_sigmod_demo.pdf" target="_blank" rel="noopener">CloudGlide demo</a> <span class="v">SIGMOD '26</span> ·
-            <a href="#pub-autoscaling">Autoscaling for cloud OLAP</a> <span class="v">SESAME '24</span> ·
-            <a href="#pub-eurosysdw">Resource optimization in the cloud</a> <span class="v">EuroSys DW '23</span>
-          </dd>
-          <dt>Code</dt>
-          <dd><a href="https://github.com/mikegeo98/cloudglide_olap" target="_blank" rel="noopener">CloudGlide simulator</a></dd>
-          <dt>Students</dt>
-          <dd>Geo-distributed OLTP design space (B. Fazakas, MT, ongoing) · Autoscaling with heterogeneous nodes (M. Fesl, MT) · Noisy neighbors in the cloud (C. Lykourinou, GR) · Interactive CloudGlide visualizer (L. Weingand, BT)</dd>
-        </dl>
-      </article>
+        <p>How should an analytical system be deployed in the cloud: elastic or static, warehouse or query-as-a-service, one region or many? CloudGlide is my simulator for answering that without deploying everything.</p>
+        <p class="direction-papers">
+          <span class="pp"><a href="https://www.vldb.org/pvldb/vol18/p5638-misegiannis.pdf" target="_blank" rel="noopener">CloudGlide</a> <span class="v">PVLDB '25</span></span>
+          <span class="pp"><a href="https://db.in.tum.de/~georgoulakis/papers/cloudglide_sigmod_demo.pdf" target="_blank" rel="noopener">CloudGlide demo</a> <span class="v">SIGMOD '26</span></span>
+          <span class="pp"><a href="#pub-autoscaling">Autoscaling for cloud OLAP</a> <span class="v">SESAME '24</span></span>
+        </p>
+      </li>
 
-      <article class="direction" id="dir-caching">
+      <li class="direction" id="dir-caching">
         <h3>Metadata management &amp; caching</h3>
-        <p class="direction-q">Disaggregated OLAP turns every cache into a distributed decision: what to keep, where to keep it, and whether sharing a cache across queries or tenants ever pays for itself.</p>
-        <dl class="direction-rows">
-          <dt>Papers</dt>
-          <dd><span class="muted">In progress.</span></dd>
-          <dt>Students</dt>
-          <dd>Shared caching for cloud OLAP: when is it worth it? (A. Lomov, BT, ongoing) · A unified in-memory caching layer for cloud OLAP (G. Caf, MT)</dd>
-        </dl>
-      </article>
+        <p>Disaggregated OLAP turns every cache into a distributed decision: what to keep, where, and whether sharing a cache across queries or tenants ever pays off.</p>
+        <p class="direction-papers"><span class="muted">Ongoing student work, papers in progress.</span></p>
+      </li>
 
-      <article class="direction" id="dir-hardware">
+      <li class="direction" id="dir-hardware">
         <h3>Modern hardware &amp; efficient computing</h3>
-        <p class="direction-q">Below the database layer: how data systems should use GPUs, unified memory and memory-centric hardware, and what breaks when GPU memory is oversubscribed. Ember is our answer for the last one: keep data in host memory by default and promote only what the hardware counters show is hot.</p>
-        <dl class="direction-rows">
-          <dt>Papers</dt>
-          <dd>
-            <a href="https://arxiv.org/abs/2610.13408" target="_blank" rel="noopener">Ember: practical UVM for oversubscribed GPUs</a> <span class="v">arXiv '26</span> ·
-            <a href="#pub-dbspektrum">Database architectures for memory-centric computing</a> <span class="v">Datenbank-Spektrum</span>
-          </dd>
-          <dt>Students</dt>
-          <dd>Hardware prefetcher for GPU UVM under oversubscription (S. Lemes, MT, ongoing) · Stabilizing discrete-GPU UVM under oversubscription (S. Lemes, GR) · Kernel-based hypervisor for lightweight VMs (T. Wachter, BT)</dd>
-        </dl>
-      </article>
+        <p>Below the database layer: GPUs, unified memory and memory-centric hardware, and what breaks when GPU memory is oversubscribed.</p>
+        <p class="direction-papers">
+          <span class="pp"><a href="https://arxiv.org/abs/2610.13408" target="_blank" rel="noopener">Ember</a> <span class="v">arXiv '26</span></span>
+          <span class="pp"><a href="#pub-dbspektrum">Memory-centric database architectures</a> <span class="v">Datenbank-Spektrum</span></span>
+        </p>
+      </li>
 
-      <article class="direction" id="dir-serverless">
+      <li class="direction" id="dir-serverless">
         <h3>Serverless query processing</h3>
-        <p class="direction-q">Serverless engines bill per query, which turns query optimization into an explicit cost-performance trade-off. This thread started with multi-objective optimization in Spark SQL and continues with serverless query engines.</p>
-        <dl class="direction-rows">
-          <dt>Papers</dt>
-          <dd>
-            <a href="#pub-edbt">From cloud to serverless</a> <span class="v">EDBT '22 tutorial</span> ·
-            <a href="#pub-ideas">Multi-objective query optimization in Spark SQL</a> <span class="v">IDEAS '22</span>
-          </dd>
-          <dt>Students</dt>
-          <dd>Cost-performance optimization in serverless query engines (B. Fazakas, GR)</dd>
-        </dl>
-      </article>
+        <p>Per-query billing turns query optimization into an explicit cost-performance trade-off. This started with multi-objective optimization in Spark SQL.</p>
+        <p class="direction-papers">
+          <span class="pp"><a href="#pub-edbt">From cloud to serverless</a> <span class="v">EDBT '22</span></span>
+          <span class="pp"><a href="#pub-ideas">Multi-objective optimization in Spark SQL</a> <span class="v">IDEAS '22</span></span>
+        </p>
+      </li>
 
-      <article class="direction" id="dir-bench">
+      <li class="direction" id="dir-bench">
         <h3>Benchmarking</h3>
-        <p class="direction-q">Are we measuring the right thing? TPC-H says little about the workloads cloud warehouses actually run, and the vendor telemetry that does is stripped of the SQL. We argue for benchmarks built from concrete use cases such as ELT pipelines and BI dashboards.</p>
-        <dl class="direction-rows">
-          <dt>Papers</dt>
-          <dd><a href="#pub-dbtest">Cloud analytics benchmarking: where we are, what is missing</a> <span class="v">DBTest '26</span></dd>
-          <dt>Code</dt>
-          <dd><a href="https://github.com/mikegeo98/cab" target="_blank" rel="noopener">Cloud Analytics Benchmark (serverless fork)</a></dd>
-        </dl>
-      </article>
+        <p>TPC-H says little about real cloud workloads, and vendor telemetry strips the SQL. We argue for benchmarks built from concrete use cases such as ELT pipelines and BI dashboards.</p>
+        <p class="direction-papers">
+          <span class="pp"><a href="#pub-dbtest">Cloud analytics benchmarking</a> <span class="v">DBTest '26</span></span>
+        </p>
+      </li>
 
-    </div>
+    </ol>
   </section>
   <!-- ============ PUBLICATIONS ============ -->
   <section class="block" id="publications">
@@ -298,9 +272,9 @@
       <li><span class="row-date">BT 2026</span><span class="row-title">Kernel-Based Hypervisor for Lightweight VMs</span><span class="row-sub">Thomas Wachter <span class="dir">hardware</span></span></li>
       <li><span class="row-date">MT 2025</span><span class="row-title">Designing a Unified In-Memory Caching Layer for Cloud OLAP Workloads</span><span class="row-sub">Gregor Caf <span class="dir">caching</span></span></li>
       <li><span class="row-date">MT 2024</span><span class="row-title">Workload-Driven Optimization of Autoscaling Systems Using Heterogeneous Nodes</span><span class="row-sub">Matthias Fesl <span class="dir">cloud</span></span></li>
-      <li><span class="row-date">MT 2024</span><span class="row-title">Syslog Collection and Analysis of Network Devices in Microsoft Azure</span><span class="row-sub">Camelia Zalum</span></li>
+      <li><span class="row-date">MT 2024</span><span class="row-title">Syslog Collection and Analysis of Network Devices in Microsoft Azure</span><span class="row-sub">Camelia Zalum <span class="dir">cloud</span></span></li>
       <li><span class="row-date">GR 2023</span><span class="row-title">Quantifying the Noisy Neighbor Problem in the Cloud</span><span class="row-sub">Christodoulos Lykourinou <span class="dir">cloud</span></span></li>
-      <li><span class="row-date">BT 2023</span><span class="row-title">A GUIde for Tuning and Troubleshooting Parallel Query Processing</span><span class="row-sub">Vincent Limbach</span></li>
+      <li><span class="row-date">BT 2023</span><span class="row-title">A GUIde for Tuning and Troubleshooting Parallel Query Processing</span><span class="row-sub">Vincent Limbach <span class="dir">cloud</span></span></li>
     </ul>
     <p class="footnote">BT: Bachelor's thesis · MT: Master's thesis · GR: Guided Research</p>
   </section>
